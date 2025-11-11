@@ -1,34 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Teto Amigo</title>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body style="background-color: rgb(140, 194, 248);">
-  <header style="background-color: lightgray;">
-    <nav style="display:flex; align-items:center; justify-content:flex-start; gap:16px;">
-    <img src="imagens/logo.png" alt="Teto Amigo" height="80">
-      <ul>
+<body>
+  <header class="topo">
+    <div class="container linha-topo">
+      <a class="logo" href="index.html">
+        <img src="imagens/logo.png" alt="Teto Amigo">
+      </a>
+
+      <nav class="menu">
+        <ul class="links">
+          <li><a href="index.html">Início</a></li>
+          <li class="item-menu">
+            <a href="projetos.html">Projetos</a>
+            <div class="caixa-submenu">
+              <a href="projetos.html#doacoes">Doações</a>
+              <a href="projetos.html#padrinhos">Padrinhos</a>
+              <a href="projetos.html#voluntariado">Voluntariado</a>
+            </div>
+          </li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+
+      <input type="checkbox" id="abrir-menu" hidden>
+      <label for="abrir-menu" class="botao-menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+
+    <div class="menu-mobile">
+      <ul class="lista-mobile">
         <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
+        <li>
+          <details>
+            <summary>Projetos</summary>
+            <div class="caixa-submenu">
+              <a href="projetos.html#doacoes">Doações</a>
+              <a href="projetos.html#padrinhos">Padrinhos</a>
+              <a href="projetos.html#voluntariado">Voluntariado</a>
+            </div>
+          </details>
+        </li>
         <li><a href="cadastro.html">Cadastro</a></li>
       </ul>
-    </nav>
+    </div>
   </header>
-  <h1>Bem Vindo ao Teto Amigo</h1>
-  <h2>Um Lar de Esperança para Pessoas em Situação de Rua</h2>
-  <p>Seu portal para encontrar moradia acessível e segura.</p>
-  <p>A ONG Teto Amigo dedica-se a oferecer apoio e dignidade a pessoas em situação de rua. Com um trabalho incansável, a organização busca não apenas fornecer abrigo e alimentação, mas também promover a reintegração social e a construção de um futuro mais promissor para aqueles que mais precisam. Teto Amigo é mais do que um nome; é um compromisso com a solidariedade e a crença de que todos merecem um teto e um amigo.</p>
-  <img src="imagens/background.jpg" alt="voluntarios-sendo-solicitos" width="850" height="500" style="display: block; margin: 0 auto;">
-  <footer>
-    <h2>Fale Conosco:</h2>
-    <address>
-      <p>E-mail: contato@tetoamigo.org</p>
-      <p>Telefone: +55 35 1234-5678</p>
-      <p>Local: Av. Abobrinha, 45 - São Paulo, SP.</p>
-    </address>
-    <p>&copy; 2025 Teto Amigo. Todos os direitos reservados.</p>
+
+  <main>
+    <section class="faixa-inicial">
+      <div class="container">
+        <h1>Bem-vindo ao Teto Amigo</h1>
+        <h2>Um Lar de Esperança para Pessoas em Situação de Rua</h2>
+        <p class="max-700">A ONG Teto Amigo apoia pessoas em situação de rua, oferecendo abrigo, alimentação e promovendo a reintegração social. Mais que um nome, é um compromisso com a dignidade.</p>
+        <img src="imagens/background.jpg" alt="Voluntários oferecendo ajuda">
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="linha-rodape">
+        <h2>Fale Conosco</h2>
+        <address>
+          <div>E-mail: contato@tetoamigo.org</div>
+          <div>Telefone: +55 35 1234-5678</div>
+          <div>Local: Av. Abobrinha, 45 - São Paulo, SP</div>
+        </address>
+      </div>
+      <div class="cop">&copy; 2025 Teto Amigo. Todos os direitos reservados.</div>
+    </div>
   </footer>
 </body>
 </html>
