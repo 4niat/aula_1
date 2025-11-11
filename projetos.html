@@ -1,47 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teto Amigo</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teto Amigo - Projetos</title>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body style="background-color: rgb(140, 194, 248);">
-  <header style="background-color: lightgray;">
-    <nav style="display:flex; align-items:center; justify-content:flex-start; gap:16px;">
-    <img src="imagens/logo.png" alt="Teto Amigo" height="80">
-      <ul>
+<body>
+  <header class="topo">
+    <div class="container linha-topo">
+      <a class="logo" href="index.html">
+        <img src="imagens/logo.png" alt="Teto Amigo">
+      </a>
+
+      <nav class="menu">
+        <ul class="links">
+          <li><a href="index.html">Início</a></li>
+          <li class="item-menu">
+            <a href="projetos.html" class="ativo">Projetos</a>
+            <div class="caixa-submenu">
+              <a href="#doacoes">Doações</a>
+              <a href="#padrinhos">Padrinhos</a>
+              <a href="#voluntariado">Voluntariado</a>
+            </div>
+          </li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+
+      <input type="checkbox" id="abrir-menu" hidden>
+      <label for="abrir-menu" class="botao-menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+
+    <div class="menu-mobile">
+      <ul class="lista-mobile">
         <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
+        <li>
+          <details open>
+            <summary>Projetos</summary>
+            <div class="caixa-submenu">
+              <a href="#doacoes">Doações</a>
+              <a href="#padrinhos">Padrinhos</a>
+              <a href="#voluntariado">Voluntariado</a>
+            </div>
+          </details>
+        </li>
         <li><a href="cadastro.html">Cadastro</a></li>
       </ul>
-    </nav>
+    </div>
   </header>
-  <h1>Projetos</h1>
-  <p>Cada projeto do Teto Amigo é um passo firme na jornada de reconstrução de vidas e na edificação de um futuro com mais dignidade</p>
 
-  <h2>Apoie o Teto Amigo: Sua Doação Transforma Vidas</h2>
-  <p>No Teto Amigo, cada contribuição faz a diferença. Sua doação é fundamental para mantermos nossos projetos e continuarmos oferecendo apoio essencial a pessoas em situação de rua. Juntos, podemos construir um futuro mais digno e cheio de esperança.</p>
-  <img src="imagens/donate-items.jpg" alt="doacoes" width="850" height="500" style="display: block; margin: 0 auto;">
+  <main>
+    <section class="faixa-projetos">
+      <div class="container">
+        <h1>Projetos</h1>
+        <p class="max-700">Cada projeto do Teto Amigo é um passo na reconstrução de vidas e de um futuro com dignidade.</p>
+        <h2 class="mt-2">Apoie: sua doação transforma vidas</h2>
+        <p class="max-700">Sua contribuição mantém nossos projetos e o apoio essencial à população em situação de rua.</p>
+        <img src="imagens/donate-items.jpg" alt="Doações de itens">
+      </div>
+    </section>
 
-  <h3>Doação de Itens</h3>
-  <p>Aceitamos doações de roupas (em bom estado), cobertores, produtos de higiene pessoal, alimentos não perecíveis e água mineral. Para agendar a entrega ou retirada de doações, entre em contato conosco pelo telefone: +55 35 1234-5678 ou e-mail: contato@tetoamigo.org. </p>
-  
-  <h3>Seja um Padrinho/Madrinha</h3>
-  <p>Com uma contribuição mensal, você garante um suporte contínuo aos nossos assistidos, ajudando a custear alimentação, abrigo e programas de reintegração.</p>
+    <section class="cartoes" id="doacoes">
+      <div class="container">
+        <div class="grid-cartoes">
+          <article class="cartao">
+            <div class="conteudo-cartao">
+              <h3 class="titulo-cartao">Doação de Itens</h3>
+              <p class="texto-cartao">Roupas, cobertores, higiene, alimentos e água. Agende entrega ou retirada.</p>
+              <div class="etiquetas">
+                <span class="etiqueta">Itens</span>
+                <span class="etiqueta">Urgente</span>
+              </div>
+            </div>
+          </article>
 
-  <h3>Doação em Dinheiro</h3>
-  <p>Você pode fazer uma doação única ou recorrente através de nossa chave PIX. Cada centavo é revertido diretamente para nossos projetos.</p>
-  <p><b>Pix:</b> A forma mais rápida e prática de doar. Utilize nossa chave Pix: doacao@tetoamigo.org.br</p>
-  <p><b>Cartão de Crédito:</b> Em breve, teremos a opção de doação via cartão de crédito em nosso site.</p>
+          <article class="cartao" id="padrinhos">
+            <div class="conteudo-cartao">
+              <h3 class="titulo-cartao">Seja Padrinho/Madrinha</h3>
+              <p class="texto-cartao">Ajude mensalmente a manter alimentação, abrigo e reintegração.</p>
+              <div class="etiquetas">
+                <span class="etiqueta">Mensal</span>
+                <span class="etiqueta">Recorrente</span>
+              </div>
+            </div>
+          </article>
 
-  <footer>
-    <h2>Fale Conosco:</h2>
-    <address>
-      <p>E-mail: contato@tetoamigo.org</p>
-      <p>Telefone: +55 35 1234-5678</p>
-      <p>Local: Av. Abobrinha, 45 - São Paulo, SP.</p>
-    </address>
-    <p>&copy; 2025 Teto Amigo. Todos os direitos reservados.</p>
+          <article class="cartao" id="voluntariado">
+            <div class="conteudo-cartao">
+              <h3 class="titulo-cartao">Voluntariado</h3>
+              <p class="texto-cartao">Atue em campo, logística, cozinha solidária, acolhimento e oficinas.</p>
+              <div class="etiquetas">
+                <span class="etiqueta">Humanitário</span>
+                <span class="etiqueta">Acolhimento</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid mt-4">
+          <div class="col-4">
+            <p>Aceitamos roupas, cobertores, higiene, alimentos e água.<br>Contato: +55 35 1234-5678 / contato@tetoamigo.org</p>
+          </div>
+          <div class="col-4">
+            <p>Contribua mensalmente para manter os projetos ativos.</p>
+          </div>
+          <div class="col-4">
+            <p><b>Pix:</b> doacao@tetoamigo.org.br<br><b>Cartão:</b> em breve.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="linha-rodape">
+        <h2>Fale Conosco</h2>
+        <address>
+          <div>E-mail: contato@tetoamigo.org</div>
+          <div>Telefone: +55 35 1234-5678</div>
+          <div>Local: Av. Abobrinha, 45 - São Paulo, SP</div>
+        </address>
+      </div>
+      <div class="cop">&copy; 2025 Teto Amigo. Todos os direitos reservados.</div>
+    </div>
   </footer>
 </body>
 </html>
