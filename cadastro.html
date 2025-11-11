@@ -1,73 +1,194 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teto Amigo</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teto Amigo - Cadastro</title>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body style="background-color: rgb(140, 194, 248);">
-  <header style="background-color: lightgray;">
-    <nav style="display:flex; align-items:center; justify-content:flex-start; gap:16px;">
-    <img src="imagens/logo.png" alt="Teto Amigo" height="80">
-      <ul>
+<body>
+  <header class="topo">
+    <div class="container linha-topo">
+      <a class="logo" href="index.html">
+        <img src="imagens/logo.png" alt="Teto Amigo">
+      </a>
+
+      <nav class="menu">
+        <ul class="links">
+          <li><a href="index.html">Início</a></li>
+          <li class="item-menu">
+            <a href="projetos.html">Projetos</a>
+            <div class="caixa-submenu">
+              <a href="projetos.html#doacoes">Doações</a>
+              <a href="projetos.html#padrinhos">Padrinhos</a>
+              <a href="projetos.html#voluntariado">Voluntariado</a>
+            </div>
+          </li>
+          <li><a href="cadastro.html" class="ativo">Cadastro</a></li>
+        </ul>
+      </nav>
+
+      <input type="checkbox" id="abrir-menu" hidden>
+      <label for="abrir-menu" class="botao-menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+
+    <div class="menu-mobile">
+      <ul class="lista-mobile">
         <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
+        <li>
+          <details>
+            <summary>Projetos</summary>
+            <div class="caixa-submenu">
+              <a href="projetos.html#doacoes">Doações</a>
+              <a href="projetos.html#padrinhos">Padrinhos</a>
+              <a href="projetos.html#voluntariado">Voluntariado</a>
+            </div>
+          </details>
+        </li>
         <li><a href="cadastro.html">Cadastro</a></li>
       </ul>
-    </nav>
+    </div>
   </header>
-  <h1>Cadastro</h1>
-  <p>Sua mão pode ser o elo que reconecta alguém à vida. Seja voluntário no Teto Amigo e construa esperança.</p>
-  <div class="input-container">
-    <form action="#" method="post">
-      <label for="nome">Nome Completo:</label><br>
-      <input type="text" id="nome" name="nome" required><br><br>
 
-      <label for="email">E-mail:</label><br>
-      <input type="email" id="email" placeholder="Insira seu e-mail" name="email" required><br><br>
+  <main>
+    <section class="container mt-4">
+      <div class="max-700" style="text-align:center;">
+        <h1 style="font-size: var(--fz-5);">Cadastro</h1>
+        <p>Seja voluntário e construa esperança com o Teto Amigo.</p>
+      </div>
 
-      <label for="CPF">CPF:</label><br>
-      <input type="text" id="CPF" inputmode="numeric" minlength="11" maxlength="11" placeholder="000.000.000-00" name="CPF" required><br><br>
+      <form class="formulario mt-3" method="post">
+        <div class="grid">
+          <div class="col-6">
+            <div class="grupo">
+              <label class="rotulo" for="nome">Nome Completo</label>
+              <input class="campo" type="text" id="nome" name="nome" required placeholder="Seu nome">
+              <div class="erro">Informe seu nome completo.</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="grupo">
+              <label class="rotulo" for="email">E-mail</label>
+              <input class="campo" type="email" id="email" name="email" required placeholder="nome@exemplo.com">
+              <div class="erro">Informe um e-mail válido.</div>
+            </div>
+          </div>
 
-      <label for="telefone">Telefone:</label><br>
-      <input type="tel" id="telefone" inputmode="numeric" minlength="11" maxlength="11" placeholder="(00) 0 0000-0000" name="telefone" required><br><br>
+          <div class="col-6">
+            <div class="grupo">
+              <label class="rotulo" for="CPF">CPF</label>
+              <input class="campo" type="text" id="CPF" name="CPF"
+                     inputmode="numeric"
+                     placeholder="000.000.000-00"
+                     required
+                     minlength="11" maxlength="14">
+              <div class="dica">Aceita 000.000.000-00 ou 11 dígitos.</div>
+              <div class="erro">CPF inválido.</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="grupo">
+              <label class="rotulo" for="telefone">Telefone</label>
+              <input class="campo" type="tel" id="telefone" name="telefone"
+                     inputmode="numeric"
+                     placeholder="(00) 00000-0000"
+                     required
+                     minlength="11" maxlength="15">
+              <div class="erro">Telefone inválido.</div>
+            </div>
+          </div>
 
-      <label for="data_nascimento">Data de Nascimento:</label><br>
-      <input type="date" id="data_nascimento" name="data_nascimento" required><br><br>
+          <div class="col-6">
+            <div class="grupo">
+              <label class="rotulo" for="data_nascimento">Data de Nascimento</label>
+              <input class="campo" type="date" id="data_nascimento" name="data_nascimento" required>
+              <div class="erro">Informe sua data de nascimento.</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="grupo">
+              <label class="rotulo" for="cep">CEP</label>
+              <input class="campo" type="text" id="cep" name="cep"
+                     inputmode="numeric"
+                     placeholder="00000-000"
+                     required
+                     minlength="8" maxlength="9">
+              <div class="erro">CEP inválido.</div>
+            </div>
+          </div>
 
-      <label for="endereco">Endereço:</label><br>
-      <input type="text" id="endereco" name="endereco" required><br><br>
+          <div class="col-12">
+            <div class="grupo">
+              <label class="rotulo" for="endereco">Endereço</label>
+              <input class="campo" type="text" id="endereco" name="endereco" required placeholder="Rua, número, bairro">
+              <div class="erro">Informe seu endereço.</div>
+            </div>
+          </div>
 
-      <label for="cep">CEP:</label><br>
-      <input type="text" id="cep" inputmode="numeric" maxlength="8" placeholder="00000-000" name="cep" required><br><br>
+          <div class="col-6">
+            <div class="grupo">
+              <label class="rotulo" for="cidade">Cidade</label>
+              <input class="campo" type="text" id="cidade" name="cidade" required placeholder="Cidade">
+              <div class="erro">Informe sua cidade.</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="grupo">
+              <label class="rotulo" for="estado">Estado</label>
+              <input class="campo" type="text" id="estado" name="estado" required placeholder="Estado">
+              <div class="erro">Informe seu estado.</div>
+            </div>
+          </div>
 
-      <label for="cidade">Cidade:</label><br>
-      <input type="text" id="cidade" name="cidade" required><br><br>
+          <div class="col-12">
+            <div class="grupo">
+              <label class="rotulo" for="interesse">Área de Interesse</label>
+              <select class="campo" id="interesse" name="interesse" required>
+                <option value="">Selecione</option>
+                <option value="doacao">Doação de Itens</option>
+                <option value="padrinho">Padrinho/Madrinha</option>
+                <option value="voluntariado">Voluntariado</option>
+              </select>
+              <div class="erro">Selecione uma opção.</div>
+            </div>
+          </div>
+        </div>
 
-      <label for="estado">Estado:</label><br>
-      <input type="text" id="estado" name="estado" required><br><br>
+        <div class="mt-2">
+          <button class="botao botao-primario" type="submit" formaction="#confirmar">Enviar</button>
+          <button class="botao botao-contorno" type="reset">Limpar</button>
+        </div>
+      </form>
 
-      <label for="interesse">Área de Interesse:</label><br>
-      <select id="interesse" name="interesse" required>
-        <option value="">Selecione uma opção</option>
-        <option value="doacao">Doação de Itens</option>
-        <option value="padrinho">Padrinho/Madrinha</option>
-        <option value="voluntariado">Voluntariado</option>
-      </select><br><br>
+      <div id="ok" class="toast">Cadastro enviado com sucesso!</div>
 
-      <button type="submit">Enviar</button>
+      <div id="confirmar" class="fundo-modal">
+        <div class="modal" role="dialog" aria-modal="true">
+          <div class="topo-modal">Confirmar envio</div>
+          <p>Deseja realmente enviar o cadastro?</p>
+          <div class="acoes-modal">
+            <a href="#" class="botao botao-contorno">Cancelar</a>
+            <a href="#ok" class="botao botao-secundario">Confirmar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    </form>
-  </div>
-
-  <footer>
-    <h2>Fale Conosco:</h2>
-    <address>
-      <p>E-mail: contato@tetoamigo.org</p>
-      <p>Telefone: +55 35 1234-5678</p>
-      <p>Local: Av. Abobrinha, 45 - São Paulo, SP.</p>
-    </address>
-    <p>&copy; 2025 Teto Amigo. Todos os direitos reservados.</p>
+  <footer class="rodape">
+    <div class="container">
+      <div class="linha-rodape">
+        <h2>Fale Conosco</h2>
+        <address>
+          <div>E-mail: contato@tetoamigo.org</div>
+          <div>Telefone: +55 35 1234-5678</div>
+          <div>Local: Av. Abobrinha, 45 - São Paulo, SP</div>
+        </address>
+      </div>
+      <div class="cop">&copy; 2025 Teto Amigo. Todos os direitos reservados.</div>
+    </div>
   </footer>
 </body>
 </html>
